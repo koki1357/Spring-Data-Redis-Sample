@@ -15,16 +15,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class ConcertServiceImpl implements ConcertService {
     private final ConcertRedisRepository concertRedisRepository;
     private final VenueRedisRepository venueRedisRepository;
 
-    public ConcertServiceImpl(ConcertRedisRepository concertRedisRepository,
-                              VenueRedisRepository venueRedisRepository) {
-        this.concertRedisRepository = concertRedisRepository;
-        this.venueRedisRepository = venueRedisRepository;
-    }
+//    public ConcertServiceImpl(ConcertRedisRepository concertRedisRepository,
+//                              VenueRedisRepository venueRedisRepository) {
+//        this.concertRedisRepository = concertRedisRepository;
+//        this.venueRedisRepository = venueRedisRepository;
+//    }
 
 
 
