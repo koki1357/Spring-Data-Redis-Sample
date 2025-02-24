@@ -2,7 +2,7 @@ version: '3'
 
 services:
   redis-master:
-    image: redis:7.8.2
+    image: redis:7.2.4
     container_name: redis-master
     ports:
       - "6379:6379"
@@ -13,7 +13,7 @@ services:
       - redis-net
 
   redis-replica-1:
-    image: redis:7.8.2
+    image: redis:7.2.4
     container_name: redis-replica-1
     ports:
       - "6380:6379"
@@ -24,7 +24,7 @@ services:
       - redis-net
 
   redis-replica-2:
-    image: redis:7.8.2
+    image: redis:7.2.4
     container_name: redis-replica-2
     ports:
       - "6381:6379"

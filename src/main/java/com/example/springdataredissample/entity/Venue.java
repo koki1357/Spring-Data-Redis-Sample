@@ -1,10 +1,15 @@
 package com.example.springdataredissample.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Venue {
     private String id;
     private String name;
     private String address;
     private Integer capacity;
+
+    private String access;
 
     // Getters
     public String getId() {
@@ -23,6 +28,10 @@ public class Venue {
         return this.capacity;
     }
 
+    public String getAccess() {  // 追加
+        return access;
+    }
+
     // Setters
     public void setId(String id) {
         this.id = id;
@@ -38,5 +47,9 @@ public class Venue {
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
+    }
+
+    public void setAccess(String access) {  // 追加
+        this.access = access;
     }
 }

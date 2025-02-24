@@ -1,7 +1,10 @@
 package com.example.springdataredissample.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.time.LocalDateTime;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Concert {
     private String id;
     private String name;
