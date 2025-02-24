@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    build: ./
+    container_name: concert_ticket_db
+    environment:
+      MYSQL_ROOT_PASSWORD: concert_pass123
+      MYSQL_DATABASE: concert_ticket_db
+      MYSQL_USER: concert_user
+      MYSQL_PASSWORD: concert_user_pass123
+    ports:
+      - '3306:3306'
+    tmpfs:
+      # mysqlコンテナデフォルトのVolume設定はtmpfsとしてメモリ上にデータを保持し、
+      # コンテナを停止するとデータが消えるように設定
+      - /var/lib/mysql
+    # volumesを設定する場合、dbコンテナを停止してもデータは保持される
+    # (docker compose downの-vオプションで削除可能)
+    # ローカルの開発環境ではデータ保持する必要はないためコメントアウトする
+    # volumes:
+    #   - ./initdb.d:/docker-entrypoint-initdb.d
+    #   - ./db-volume:/var/lib/mysql
